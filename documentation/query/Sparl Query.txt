@@ -1,0 +1,129 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drock: <http://www.dfki.de/drock.owl>
+PREFIX comp:<http://www.dfki.de/DFKI_Robots_Components#>
+PREFIX lifecycle:<http://www.dfki.de/DFKI_life_cycle#>
+
+SELECT ?subject ?object
+	#WHERE { ?subject rdfs:subClassOf ?object }
+	#WHERE { ?subject rdfs:comment ?object }
+	#WHERE { ?subject comp:minimal_Voltage ?object .}
+	
+SELECT ((?onject)+(?object) AS ?result)
+	WHERE { ?subject comp:minimal_Voltage ?object.
+                                 ?subject comp:maximal_Voltage ?onject}
+	
+	
+	##################
+	
+	PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?x (STR(?lab) AS ?label) WHERE {
+	?x rdf:type owl:Class .
+	OPTIONAL {?x rdfs:label ?lab}
+}
+ORDER BY ?label
+
+
+########################################
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drock: <http://www.dfki.de/drock.owl#>
+PREFIX comp:<http://www.semanticweb.org/yxl/ontologies/2017/8/DFKI_Robots_Components#>
+#SELECT ?subject ?object
+	#WHERE { ?subject rdfs:subClassOf ?object }
+	#WHERE { ?subject rdfs:comment ?object }
+	#WHERE { ?subject comp:minimal_Voltage ?object .}
+	
+SELECT ?dof ?joint
+	#WHERE { ?dof drock:degreesOfFreedome ?joint}
+          WHERE { ?dof drock:exemplary_representation ?joint. }
+
+
+
+
+
+##############################
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drock: <http://www.dfki.de/drock.owl#>
+PREFIX comp:<http://www.semanticweb.org/yxl/ontologies/2017/8/DFKI_Robots_Components#>
+#SELECT ?subject ?object ?degree
+	#WHERE { ?subject rdfs:subClassOf ?object }
+	#WHERE { ?subject rdfs:comment ?object }
+	#WHERE { ?subject comp:minimal_Voltage ?object .}
+	
+SELECT ?possibility ?elements ?joint 
+	
+#SELECT (COUNT(?possibility) AS ?dof) # how many results
+	
+#SELECT (SUM(?joint) AS ?dof) # sum of find results #MAX  MIN AVG
+          	WHERE { # ?possibility drock:exemplary_representation ?example . 
+                       #  ?possibility drock:needsToBeEquippte ?joint  .
+                        # ?possibility drock:degreesOfFreedome ?joint . 
+                        # ?possibility rdfs:subClassOf ?asd .
+                       # ?possibility a  owl:ObjectProperty.
+                       #  ?possibility a owl:DatatypeProperty 
+                       ?possibility  rdf:type drock:Definition_of_functional_structure .
+                       ?possibility drock:needsToBeEquipped ?elements .
+                       ?elements  drock:degreesOfFreedome ?joint . 
+                       
+
+#################################################
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX drock: <http://www.dfki.de/drock.owl>
+PREFIX comp:<http://www.dfki.de/DFKI_Robots_Components#>
+PREFIX lifecycle:<http://www.dfki.de/DFKI_life_cycle#>
+
+
+	
+#SELECT ?possibility ?elements ?joint ?deg ?example 
+SELECT ?component ?minVolt
+#SELECT (COUNT(?possibility) AS ?dof) # how many results
+#SELECT (SUM(?joint) AS ?dof) # sum of find results #MAX  MIN AVG
+#SELECT (SUM(?deg) AS ?dof)
+WHERE { 
+                      # show me data/object properties 
+                      #  ?possibility a  owl:ObjectProperty.
+                      # ?possibility a owl:DatatypeProperty 
+ 
+                      # finding min voltage of system
+                       ?component comp:minimal_Voltage ?minVolt .
+                      
+                      # show me basic models / urdf similar
+                      # ?possibility drock:exemplary_representation ?example . 
+                                    
+                      #show me basic models and the configuration
+                      #?possibility  rdf:type drock:Definition_of_functional_structure .
+                       #?possibility drock:needsToBeEquipped ?elements .
+                       #?elements  drock:degreesOfFreedome ?joint . 
+         
+                       
+                      #finding of dof of a basic model
+                      # drock:definition_pan_tilt_unit2  drock:needsToBeEquipped ?elements. 
+                      # ?elements  drock:degreesOfFreedome ?deg . 
+
+ }
+
+
+
+################################
+
+
+###test
+#?annotation owl:annotatedSource ?person ;
+          #          owl:annotatedTarget ?child ;
+            #        ppl:sequence ?sequence .       
+         # FILTER regex(?name, "John Doe") }

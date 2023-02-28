@@ -1,0 +1,1 @@
+minimalVoltage some xsd:float[> 0.0f , < 49.0f]
