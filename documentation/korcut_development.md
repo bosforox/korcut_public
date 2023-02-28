@@ -5,7 +5,7 @@ Robots are widely used complex mechatronic systems. They are built as a combinat
 
 
 ## Covered domains by Korcut family:
-* Fundamentls
+* Fundamentals
 * Robot hardware
   * Robot mechanics
     * Material types
@@ -24,7 +24,7 @@ To develop an ontology, it is important to know details about the domains covere
 
 ## Survey to determine the domain and scope of a robot ontology
 
-To develop an ontology, it is important to know details about the domains covered, with an emphasis on necessary-sufficient information about elements (objects such as classes and individuals) and properties as well as use cases. The support of experts is necessary to parameterize the elements in order to identify the right workspace and set the right formal description. For this purpose, an initial survey was conducted and the results analyzed. The analysis of the results is available on Zenodo [![Survey1 on Zenado](https://zenodo.org/badge/DOI/10.5281/zenodo.4646974.svg)](https://doi.org/10.5281/zenodo.4646974). Subsequently, a second survey was carried out to measure the usefulness of the obtained ontology and other tools. The results of the second survey are also available on Zenodo [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7585182.svg)](https://doi.org/10.5281/zenodo.7585182).
+To develop an ontology, it is important to know details about the domains covered, with an emphasis on necessary-sufficient information about elements (objects such as classes and individuals) and properties as well as use cases. The support of experts is necessary to parameterize the elements in order to identify the right workspace and set the right formal description. For this purpose, an initial survey was conducted and the results analyzed. The analysis of the results is available on Zenodo [![Survey1 on Zenodo](https://zenodo.org/badge/DOI/10.5281/zenodo.4646974.svg)](https://doi.org/10.5281/zenodo.4646974). Subsequently, a second survey was carried out to measure the usefulness of the obtained ontology and other tools. The results of the second survey are also available on Zenodo [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7585182.svg)](https://doi.org/10.5281/zenodo.7585182).
 
 
 ## Story board
@@ -65,7 +65,7 @@ With respect to the survey results, the example vocabulary is as follows.
   * measurement range
   * tolerance
 * Sensor (general)
-  * Radar 
+  * Radar
   * Lidar
   * U-sonic
 * Data comm. Interface (gen.)

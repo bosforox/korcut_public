@@ -1,21 +1,21 @@
-<img src="https://github.com/bosforox/korcut/blob/master/documentation/figures/korcut_logo_text_90.png" width="90"> 
+<img src="https://github.com/bosforox/korcut/blob/master/documentation/figures/korcut_logo_text_90.png" width="90">
 
-# korcut 
+# korcut
 
- 
+
 The korcut (Knowledge-based Open Robot voCabulary as Utility Toolkit) provides support for system developers in the field of robotics to cover the knowledge gaps in the interdisciplinary work of electrical, mechanical and software system developers as well other fields and also user for the hardware-related areas.
-This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany. 
+This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany.
 
 The related publication and also the other publications from my work can be found under my publication list on <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/meyu01/"> DFKI Webpage </a>
 
-This work is registered under 
+This work is registered under
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4457562.svg)](https://doi.org/10.5281/zenodo.4457562)
 
 ## General description of korcut ontology family
 
-Korcut ontology has been developed to support mechatronical robot design. 
+Korcut ontology has been developed to support mechatronical robot design.
 
-### Design and development steps of Korcut ontology family: 
+### Design and development steps of Korcut ontology family:
 The information about the design and development steps of korcut ontology family can be accessed by clicking the following link.
 
 [Documentation of Korcut ontology family](./documentation/korcut_development.md)
@@ -25,9 +25,20 @@ The information about the design and development steps of korcut ontology family
 
 [//]: <> (TODO simple usage example)
 
+
 ## Requirements / Dependencies
 
-[//]: <> (TODO which dependencies do I need?)
+* OwlReady2 is necessary to parse and modify the ontologies and reason them with Hermit or Pellet reasoner as open or closed world. Please install it on your Python first.
+   * [OwlReady2 on bitbucket](https://bitbucket.org/jibalamy/owlready2/src/master/)
+   * Due to the import problem with the sub ontologies please use the development version(Vers 0.26)
+      * git clone https://bitbucket.org/jibalamy/owlready2.git
+      * Hint: In general, you need to be sure with your [multiple Python versions and install](https://stackoverflow.com/questions/2812520/dealing-with-multiple-python-versions-and-pip) and use the correct Python in Blender
+         * python3.6 -m pip install ~/work/owlready2
+
+      * [Do not install the Owlready2 directly form PyPi.Org for the current the version! See above!](https://pypi.org/project/Owlready2/)
+         * pip install Owlready2
+   * [The forum of Owlready](http://owlready.8326.n8.nabble.com)
+   * [Documentation](https://pythonhosted.org/Owlready2/#)
 
 ## Installation
 
@@ -69,7 +80,7 @@ To search for bugs or report them, please use GitHubs issue tracker at:
 Within the version number format MAJOR.MINOR.PATCHi is this work semantic versioned,
 which help the user to understand the changes performed.
 
-## Contacts: 
+## Contacts:
 * Mehmed Yüksel <mehmed.yueksel@dfki.de>
 
 
