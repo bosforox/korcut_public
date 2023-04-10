@@ -1,6 +1,6 @@
-<img src="../../documentation/figures/korcut_logo_text_90.png" width="50">
+<img src="../../documentation/figures/korcut_logo_text_90.png" width="90">
 
-# environment ontology
+# Environment ontology
 
 This ontology provides preliminary information about the environmental conditions necessary for robot task and configuration selection-
 The information contained in this ontology has been compiled from various sources. The sources used are annotated in the entities individulas, superclasses and also in the properties.
