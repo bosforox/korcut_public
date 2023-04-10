@@ -1,4 +1,4 @@
-<img src="../../documentation/figures/korcut_logo_text_90.png" width="50">
+<img src="../../documentation/figures/korcut_logo_text_90.png" width="90">
 
 # Kastro (a Korcut ontology to support ASTROnauts in extraterrestrial environments)
 The kastro ontology has been developed for the task of modelling and reasoning about prior and static knowledge about the context of the robot to assist the astronaut for MMI missions, as well as dynamic and temporally varying knowledge of agents and tools.
@@ -7,7 +7,7 @@ The kastro ontology has been developed for the task of modelling and reasoning a
 # korcut
 
 The korcut (Knowledge-based Open Robot voCabulary as Utility Toolkit) provides support for system developers in the field of robotics to cover the knowledge gaps in the interdisciplinary work of electrical, mechanical and software system developers as well other fields and also user for the hardware-related areas.
-This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany.
+This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html), [PERIOD](https://robotik.dfki-bremen.de/en/research/projects/period-og12.html) and [KiMMI-SF](https://robotik.dfki-bremen.de/en/research/projects/kimmi-sf/) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany.
 
 The related publication and also the other publications from my work can be found under my publication list on <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/meyu01/"> DFKI Webpage </a>
 
