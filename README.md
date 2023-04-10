@@ -1,4 +1,4 @@
-<img src="../../documentation/figures/korcut_logo_text_90.png" width="90">
+<img src="./documentation/figures/korcut_logo_text_90.png" width="90">
 
 # korcut
 
