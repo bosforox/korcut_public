@@ -1,6 +1,6 @@
-<img src="https://github.com/bosforox/korcut/blob/master/documentation/figures/korcut_logo_text_90.png" width="90">
+<img src="../../documentation/figures/korcut_logo_text_90.png" width="90">
 
-# fundamentals ontology
+# Fundamentals ontology
 
 Fundemanetals ontology contains various domains, that are needed for the development or execution of robotic systems or subsystem, e.g. mechanics, electronic fundamentals and their properties
 Fundamentals ontology, a sub-ontology of korcut ontology family.
