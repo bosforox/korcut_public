@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Yüksel
+    given-names: Mehmed
+    orcid: https://orcid.org/0000-0001-8422-5773
+title: bosforox/korcut_public: First release (public)
+version: first_release
+date-released: 2023-04-10
