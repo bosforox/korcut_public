@@ -1,0 +1,2301 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/yxl/ontologies/grasping#"
+     xml:base="https://w3id.org/yxl/ontologies/grasping"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:vocab="http://www.w3.org/1999/vocab/vocab#"
+     xmlns:grasping="https://w3id.org/yxl/ontologies/grasping#"
+     xmlns:fundamentals="https://w3id.org/yxl/ontologies/fundamentals#">
+    <owl:Ontology rdf:about="https://w3id.org/yxl/ontologies/grasping">
+        <dc:contributor>Thomas Röhr</dc:contributor>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehmed Yüksel</dc:creator>
+        <voaf:toDoList rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></voaf:toDoList>
+        <vocab:copyright rdf:resource="https://github.com/bosforox/korcut_public#copyrights"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The grasping ontology and class hierarchy are referring to the human hand grasping anaysis work of Thomas Feix et al.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is a sub-ontology of the korcut ontology family, which represents grasping domain related knowledge</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grasping sub-ontology</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To find more information see also the paper The GRASP Taxonomy of Human Grasp Types and the dissertation of Thomas Feix  Anthropomorphic Hand Optimization based on a Latent Space Analysis</rdfs:seeAlso>
+        <rdfs:seeAlso>http://grasp.xief.net/documents/THMS_taxonomy.pdf</rdfs:seeAlso>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">to find  more information about the korcut and q-rock project see also: http://robotik.dfki-bremen.de/de/forschung/projekte/q-rock.html</rdfs:seeAlso>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.2.1</owl:versionInfo>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+
+
+
+    <!-- http://purl.org/vocommons/voaf#toDoList -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocommons/voaf#toDoList"/>
+
+
+
+    <!-- http://www.w3.org/1999/xhtml/vocab#copyright -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/xhtml/vocab#copyright"/>
+
+
+
+    <!-- http://www.w3.org/1999/xhtml/vocab#license -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/1999/xhtml/vocab#license"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#thumbnail -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#thumbnail"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasGraspingSkill -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasGraspingSkill">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasGripperFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasGripperFunction">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasOppositionType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasOppositionType">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasThumbPosition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasThumbPosition">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForm -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForm">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectMass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectMass">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Mass"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectSize -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectSize">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#frequencyOfGraspType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#frequencyOfGraspType">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:comment>Frequency is the number of samples of different types of grasps divided by the total number of grasps of all different types of grasps used in everyday household and machine shop work, based on the study by  Bullock et al.</rdfs:comment>
+        <rdfs:seeAlso>https://www.researchgate.net/publication/260623653_Grasp_Frequency_and_Usage_in_Daily_Household_and_Machine_Shop_Tasks</rdfs:seeAlso>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#graspRealFinger -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#graspRealFinger"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#graspVirtualFinger2 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#graspVirtualFinger2"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#graspVirtualFinger3 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/grasping#graspVirtualFinger3"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Adducted_Thumb_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Adducted_Thumb_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Adduction_Grip_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Adduction_Grip_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Cubic_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Cubic_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Cylinder_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Cylinder_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Dexter_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Dexter_Grasp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Skill"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Disk_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Disk_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Distal_Type_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Distal_Type_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Ellipse_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Ellipse_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Extension_Type_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Extension_Type_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Fixed_Hook_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Fixed_Hook_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Floppy_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Floppy_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Classification -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification">
+        <rdfs:comment>A grasp is every static hand posture with which an object can be held securely with one hand.</rdfs:comment>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:seeAlso>
+        <rdfs:seeAlso>http://dbpedia.org/page/Grasp</rdfs:seeAlso>
+        <rdfs:seeAlso>http://grasp.xief.net/documents/property_table.pdf</rdfs:seeAlso>
+        <rdfs:seeAlso>http://grasp.xief.net/documents/taxonomy_comparison.pdf</rdfs:seeAlso>
+        <rdfs:seeAlso>https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=34763</rdfs:seeAlso>
+        <thumbnail>https://cdn.hackaday.io/images/285241475755961545.png</thumbnail>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Force -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Force">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Weight -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Weight">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_0_To_500_Grams -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_0_To_500_Grams">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Mass"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_500_To_1000_Grams -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_500_To_1000_Grams">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Mass"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Floppy -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Floppy">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Fragile -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Fragile">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Mass -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Mass">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigid -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigid">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_0_To_5_cm -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_0_To_5_cm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_5_To_10_cm -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_5_To_10_cm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_Bigger_Than_10_cm -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_Bigger_Than_10_cm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Squeezable -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Squeezable">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+        <rdfs:comment>the area within the coordinates of the hand where opposing forces can be exerted between virtual finger surfaces in effecting a stable grasp.</rdfs:comment>
+        <rdfs:isDefinedBy>T. Iberall, G. Bingham, and M.A. Arbib, &quot;Opposition space as a structuring concept for the analysis of skilled hand movements,&quot; Experimental Brain Research Series 15 - Generation and Modulation of Action Patterns, eds. Heuer, H., and Fromm, C., Springer-Verlag, 1986, pp. 158- 173.</rdfs:isDefinedBy>
+        <rdfs:seeAlso>https://www.cs.cmu.edu/afs/cs/user/sbk/www/images/opposition-space.gif</rdfs:seeAlso>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+        <rdfs:comment>Power, intermadiate, Precision (PIP) catogory</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Skill -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Skill">
+        <rdfs:comment>The classes are from Cutkosky’s taxonomy of prehension. The class restrictions are defined by yxl</rdfs:comment>
+        <rdfs:seeAlso>https://ieeexplore.ieee.org/document/34763</rdfs:seeAlso>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Grasping_Thumb_Position -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Grasping_Thumb_Position">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Classification"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Index_Finger_Extension_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Index_Finger_Extension_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Inferior_Pincer_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Inferior_Pincer_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Intermediate_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Intermediate_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Irregegular_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Irregegular_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Large_Diameter_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Large_Diameter_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Lateral_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Lateral_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Lateral_Tripod_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Lateral_Tripod_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Light_Tool_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Light_Tool_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Long_Prism_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Long_Prism_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Medium_Wrap_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Medium_Wrap_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Pad_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Pad_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Palm_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Palm_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Palmar_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Palmar_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Palmar_Pinch_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Palmar_Pinch_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Parallel_Extension_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Parallel_Extension_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Platform_Push -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Platform_Push">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Power_Disk_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Power_Disk_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Power_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Power_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty"/>
+        <rdfs:comment>emphasis on secruty and stability</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Power_Sphere_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Power_Sphere_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Precision_Disk_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Precision_Disk_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Precision_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_PIP_Categoty"/>
+        <rdfs:comment>emphasis on dexterity and sensibility</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Precision_Sphere_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Precision_Sphere_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Prismatic_2_Finger_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Prismatic_2_Finger_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Prismatic_3_Finger_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Prismatic_3_Finger_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Prismatic_4_Finger_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Prismatic_4_Finger_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Quadpod_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Quadpod_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Ring_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Ring_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Scissor_Plier_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Scissor_Plier_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Secure_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Secure_Grasp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/grasping#Intermediate_Grasp"/>
+                                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Skill"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Sensible_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Sensible_Grasp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Fragile"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Skill"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Short_Prism_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Short_Prism_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Side_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Side_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Opposition_Type"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Small_Diameter_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Small_Diameter_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Sphere_3_Finger_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Sphere_3_Finger_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Sphere_4_Finger_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Sphere_4_Finger_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Sphere_Object -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Sphere_Object">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Geometry_Of_Object"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Stable_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Stable_Grasp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Weight"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigidity"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Skill"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Stick_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Stick_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_10_has2virtualFinger_lessThan500g_size5to10cm_shapeCylinderOrDisk -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_10_has2virtualFinger_lessThan500g_size5to10cm_shapeCylinderOrDisk">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForm"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Cylinder_Object"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForm"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Disk_Object"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectMass"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_0_To_500_Grams"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectSize"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_5_To_10_cm"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#graspVirtualFinger2"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_1_Power_Grasp_Frequency_Bigger_Than_5 -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_1_Power_Grasp_Frequency_Bigger_Than_5">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForm"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Cylinder_Object"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#frequencyOfGraspType"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_2_Power_Grasp_Palm_Adducted -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_2_Power_Grasp_Palm_Adducted">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasOppositionType"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Palm_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasThumbPosition"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Thumb_Adducted"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_3_PrecisionFrequency_1to2 -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_3_PrecisionFrequency_1to2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#frequencyOfGraspType"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_4_Rigid_Medium_Interaction -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_4_Rigid_Medium_Interaction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigid"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectSize"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_5_To_10_cm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_5_Fragile_Medium_Interaction -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_5_Fragile_Medium_Interaction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectForce"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectRigidity"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Fragile"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectSize"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_0_To_5_cm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_6_Stabile_Circular_Object_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_6_Stabile_Circular_Object_Grasp">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/grasping#Stable_Grasp"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingObjectProperty"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Cylinder_Object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_7_Power_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_7_Power_Grasp">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_8_Grasping_0to500g_MassObject -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_8_Grasping_0to500g_MassObject">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasTypeOfGraspingObjectMass"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_500_To_1000_Grams"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Function_9_Power_Grasp_Palm_Adducted -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_9_Power_Grasp_Palm_Adducted">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGraspingCategory"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasOppositionType"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Palm_Grasp"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasThumbPosition"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Thumb_Adducted"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Grasping_Function"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Gripper_A -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Gripper_A">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGripperFunction"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Function_1_Power_Grasp_Frequency_Bigger_Than_5"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grippers"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Gripper_B -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Gripper_B">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/grasping#hasGripperFunction"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/grasping#Secure_Grasp"/>
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Function_10_has2virtualFinger_lessThan500g_size5to10cm_shapeCylinderOrDisk"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Test_Grippers"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Test_Grippers -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Test_Grippers"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Thumb_Abducted -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Thumb_Abducted">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Thumb_Position"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Thumb_Adducted -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Thumb_Adducted">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Thumb_Position"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Tip_Pinch_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Tip_Pinch_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Tripod_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Tripod_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Tripod_Variation_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Tripod_Variation_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Ventral_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Ventral_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#Writing_Tripod_Grasp -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/grasping#Writing_Tripod_Grasp">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/grasping#Human_Grasping_Behaviour"/>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Intermediate_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Interaction"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_force_weight -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Force_Weight"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_500_To_1000_Grams"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_mass_light -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_0_To_500_Grams"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_cubic -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_cubic">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Cubic_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Cylinder_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_disk -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_disk">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Disk_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_ellipse -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_ellipse">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Ellipse_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Floppy_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Irregegular_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_long -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_long">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Long_Prism_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Short_Prism_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Sphere_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_object_tool_scissor_plier -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_object_tool_scissor_plier">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Scissor_Plier_Object"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Pad_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Palm_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Side_Grasp"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Floppy"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Fragile"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Rigid"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Squeezable"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_size_big -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_size_big">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_Bigger_Than_10_cm"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_size_medium -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_5_To_10_cm"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_size_small -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_size_small">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Grasping_Object_Size_0_To_5_cm"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Thumb_Abducted"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Thumb_Adducted"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_skill_dexter -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_skill_dexter"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_skill_secure -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_skill_secure"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_skill_sensible -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_skill_sensible"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_skill_stabile -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_skill_stabile"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_adducted_thumb -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_adducted_thumb">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Adducted_Thumb_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+        <graspVirtualFinger3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</graspVirtualFinger3>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_adduction_grip -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_adduction_grip">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Adduction_Grip_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_diameter_large -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_diameter_large">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Large_Diameter_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.7</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_diameter_small -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_diameter_small">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Small_Diameter_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_distal -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_distal">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Distal_Type_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_tool_scissor_plier"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_extension -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_extension">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Extension_Type_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.6</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_extension_index_finger -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_extension_index_finger">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Index_Finger_Extension_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_long"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspVirtualFinger2>
+        <graspVirtualFinger3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger3>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_extention_parallel -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_extention_parallel">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Parallel_Extension_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_hook_fixed -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_hook_fixed">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Fixed_Hook_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_inferior_pincer -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_inferior_pincer">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Inferior_Pincer_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_lateral -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_lateral">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Lateral_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_long"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.9</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_lateral_tripod -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_lateral_tripod">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Lateral_Tripod_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_light_tool -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_light_tool">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Light_Tool_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_long"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.8</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+        <graspVirtualFinger3 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</graspVirtualFinger3>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_palmar -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_palmar">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Palmar_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_disk"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.6</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_pinch_palmar -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_pinch_palmar">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Palmar_Pinch_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9</frequencyOfGraspType>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_pinch_tip -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_pinch_tip">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Tip_Pinch_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_platform_push -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_platform_push">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Platform_Push"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_heavy"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_big"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_power_disk -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_power_disk">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Disk_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_disk"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_power_sphere -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_power_sphere">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Power_Sphere_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.3</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_precision_disk -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_precision_disk">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Disk_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_disk"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.1</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_precision_sphere -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_precision_sphere">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Precision_Sphere_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_fragile"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_2">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Prismatic_2_Finger_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">6.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_3">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Prismatic_3_Finger_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_4">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Prismatic_4_Finger_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_prism_short"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_quadpod -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_quadpod">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Quadpod_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.3</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_ring -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_ring">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Ring_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_disk"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_sphere_3_finger -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_sphere_3_finger">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Sphere_3_Finger_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.5</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_sphere_4_finger -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_sphere_4_finger">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Sphere_4_Finger_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cubic"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_stick -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_stick">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Stick_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_floppy"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.2</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_tripod -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_tripod">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Tripod_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_sphere"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_tripod_variation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_tripod_variation">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Tripod_Variation_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_pad"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_ventral -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_ventral">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Ventral_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_intermediate"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_floppy"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.4</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_wrap_medium -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_wrap_medium">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Medium_Wrap_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_power"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_palm"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_adducted"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_interaction"/>
+        <hasTypeOfGraspingObjectForce rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_force_weight"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_ellipse"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_irregular"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_squeezable"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_medium"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.5</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#grasping_type_writing_tripod -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#grasping_type_writing_tripod">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/grasping#Writing_Tripod_Grasp"/>
+        <hasGraspingCategory rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_categoty_precision"/>
+        <hasOppositionType rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_opposition_side"/>
+        <hasThumbPosition rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_thumb_position_abducted"/>
+        <hasTypeOfGraspingObjectForm rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_object_cylinder"/>
+        <hasTypeOfGraspingObjectMass rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_mass_light"/>
+        <hasTypeOfGraspingObjectRigidity rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_rigidity_rigid"/>
+        <hasTypeOfGraspingObjectSize rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasp_size_small"/>
+        <frequencyOfGraspType rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</frequencyOfGraspType>
+        <graspRealFinger rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspRealFinger>
+        <graspVirtualFinger2 rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</graspVirtualFinger2>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#test_gripper_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#test_gripper_1">
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_power_sphere"/>
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_ring"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#test_gripper_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#test_gripper_2">
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_adduction_grip"/>
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_wrap_medium"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#test_gripper_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#test_gripper_3">
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_prismatic_finger_4"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/grasping#test_gripper_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/grasping#test_gripper_4">
+        <hasGripperFunction rdf:resource="https://w3id.org/yxl/ontologies/grasping#grasping_type_power_disk"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

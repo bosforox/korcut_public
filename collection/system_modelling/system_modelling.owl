@@ -1,0 +1,1517 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/yxl/ontologies/system_modelling#"
+     xml:base="https://w3id.org/yxl/ontologies/system_modelling"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:qudt="http://data.nasa.gov/qudt/owl/qudt#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:voaf="http://purl.org/vocommons/voaf#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:units="https://w3id.org/yxl/ontologies/units#"
+     xmlns:capability="https://w3id.org/yxl/ontologies/capability#"
+     xmlns:ontologies="https://w3id.org/yxl/ontologies/"
+     xmlns:fundamentals="https://w3id.org/yxl/ontologies/fundamentals#">
+    <owl:Ontology rdf:about="https://w3id.org/yxl/ontologies/system_modelling">
+        <dc:titel>System modelling ontology, a sub ontology of Korcut</dc:titel>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehmed Yüksel</dc:creator>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-26T19:12:00+01:00</terms:created>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:15:00+01:00</terms:modified>
+        <rdfs:comment rdf:resource="https://github.com/bosforox/korcut_public#copyrights"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> This onlology provides high-level concepts about the robot subsystems that constitute the robot and some guidelines for the automatic design of the robotic system, e.g. compatibility of inter-sub-system interfaces, it enables the designer to improve the knowledge of the model. </rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/titel -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/titel"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#doi -->
+
+    <owl:AnnotationProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#doi"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasComponent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasComponent">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#isAdapterToConnectType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#isAdapterToConnectType"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#isSufficientForLocomotion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#isSufficientForLocomotion"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#isSufficientForManupulation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#isSufficientForManupulation"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#isTypeOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#isTypeOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasChildObj -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasChildObj"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasComponentLocomationType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasComponentLocomationType"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasElectricalDeviceType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasElectricalDeviceType"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasInterfaceObj -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasInterfaceObj"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLaserProtectionClass -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLaserProtectionClass"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLinkObj -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLinkObj">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasParentObj -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasParentObj"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasProvider -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasProvider"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRobotSubSystem -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRobotSubSystem"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasAccuracy"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasCameraFrameRateMaximum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasCameraFrameRateMaximum"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorModel -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorModel"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorSize -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorSize"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorType"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceClosing -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceClosing"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceHolding -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceHolding"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceOpening -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceOpening"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasGripperStroke -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasGripperStroke"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasLensMount -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasLensMount"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasMeasuringRangeMeterMaximum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasMeasuringRangeMeterMaximum"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfLeg -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfLeg"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfWheel -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfWheel"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPayloadCapacity -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadCapacity"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFormFitMaximum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFormFitMaximum"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFrictionMaximum -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFrictionMaximum"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeHorizontal -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeHorizontal"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeVertical -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeVertical"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelHorizontal -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelHorizontal"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelVertical -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelVertical"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasScanningFrequency -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasScanningFrequency"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasGeometryType -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasGeometryType"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxX -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxX">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxY -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxY">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxZ -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMaxZ">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinX -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinX">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinY -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinY">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinZ -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimitMinZ">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasLocationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasNumberOfTrack -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasNumberOfTrack"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxX -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxX">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxY -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxY">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxZ -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMaxZ">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinX -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinX">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinY"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinY -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinY">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinZ -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/yxl/ontologies/system_modelling#hasRotationLimitMinZ">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasRotationLimit"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Adapter_Fixed_Arm_Base -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Adapter_Fixed_Arm_Base">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Adapter_Fixed_Arm_Tool -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Adapter_Fixed_Arm_Tool">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Adapter_Pan_Tilt -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Adapter_Pan_Tilt">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Arm_Base -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem_Mechanical_Interface"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Arm_Dual -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Arm_Dual">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Arm_Gripper -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Arm_Gripper">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Arm_Single -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Arm_Single">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm"/>
+        <rdfs:comment>hasMechanicalInterface exactly 1 Arm_Base</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem_Mechanical_Interface"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Atomic_Model -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Atomic_Model">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Qrock_Component"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Atomic_Model_Interface -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Atomic_Model_Interface">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Qrock_Component"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Base_Fix -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Base_Fix">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Base_Floating -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Base_Floating">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Bidirectional -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Bidirectional">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Mechanical_Interface_Direction"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Composite_Model -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Composite_Model">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Qrock_Component"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Continuous_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Continuous_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Controller -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Controller">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Fixed_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Fixed_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Floating_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Floating_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Gripper -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceClosing"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceHolding"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasGripperForceOpening"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasGripperStroke"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFormFitMaximum"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadGripFrictionMaximum"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Tool"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Gripper_2_Finger -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper_2_Finger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Gripper_3_Finger -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper_3_Finger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Gripper_4_Finger -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper_4_Finger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Gripper_5_Finger -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper_5_Finger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfFinger"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Gripper"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Incoming -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Incoming">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Mechanical_Interface_Direction"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Interface -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Interface">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Link"/>
+        <rdfs:comment>http://wiki.ros.org/urdf/XML/joint</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Legged_Platform -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Platform">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfLeg"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:onDataRange>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Legged_Tracked_Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Tracked_Robot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Platform"/>
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Tracked_Platform"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform"/>
+        <rdfs:comment>e.g. IRobot SUGV</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Legged_Wheeled_Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Wheeled_Robot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform"/>
+        <rdfs:comment>The legs of robot consist wheels. e.g. Handle</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Legged_Wheeled_Tracked_Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Wheeled_Tracked_Robot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Platform"/>
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Tracked_Platform"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Legged_Platform"/>
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Platfrom"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Tracked_Platform"/>
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Platfrom"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform"/>
+        <rdfs:comment>e.g. Azimuth Robot</rdfs:comment>
+        <rdfs:comment>https://introlab.3it.usherbrooke.ca/mediawiki-introlab/images/thumb/f/f0/AZIMUTMulti.jpg/200px-AZIMUTMulti.jpg</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Link -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Link">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Mechanical_Interface_Direction -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Mechanical_Interface_Direction">
+        <rdfs:comment>Qrock interface types</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Mono_Camera -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Mono_Camera">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasLensMount"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasCameraFrameRateMaximum"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorModel"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorSize"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasCameraImageSensorType"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeHorizontal"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPixelSizeVertical"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelHorizontal"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasResolutionPixelVertical"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Motor -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Motor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Outgoing -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Outgoing">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Mechanical_Interface_Direction"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Planar_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Planar_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Prismatic_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Prismatic_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Qrock_Component -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Qrock_Component">
+        <rdfs:comment>Collection of special defined qrock model types</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Revolute_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Revolute_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Adapter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#isAdapterToConnectType"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasDegreesOfFreedom"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Arm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Base -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Base"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPayloadCapacity"/>
+                        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Element -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element">
+        <rdfs:comment>Abstact, from URDF and phobos perspectives</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasMechanicalInterface"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+        <rdfs:comment>hasRobotSubSystem min 1 Battery_Subsystem</rdfs:comment>
+        <rdfs:seeAlso>Paper: Review article: locomotion systems for ground mobile robots in unstructured environments, Bruzzone et al (2012)</rdfs:seeAlso>
+        <fundamentals:doi>http://dx.doi.org/10.5194/ms-3-49-2012</fundamentals:doi>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMechanicalInterface"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Interface"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasAccuracy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasScanningFrequency"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+        <rdfs:comment>Paper: Weather Effects on Obstacle Detection for Autonomous Car, Song et al. (2020)</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="https://www.electronicproducts.com/designers-guide-to-robot-vision-cameras/"/>
+        <rdfs:seeAlso>https://e2e.ti.com/blogs_/b/behind_the_wheel/posts/the-need-for-speed-the-future-of-radar-processing</rdfs:seeAlso>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Paper: Weather Effects on Obstacle Detection for Autonomous Car, Song et al. (2020)</owl:annotatedTarget>
+        <rdfs:seeAlso>https://www.scitepress.org/Papers/2020/93545/93545.pdf</rdfs:seeAlso>
+        <fundamentals:doi>10.5220/0009354503310341</fundamentals:doi>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+        <owl:annotatedTarget>https://e2e.ti.com/blogs_/b/behind_the_wheel/posts/the-need-for-speed-the-future-of-radar-processing</owl:annotatedTarget>
+        <rdfs:seeAlso>https://e2e.ti.com/resized-image/__size/800x0/__key/communityserver-blogs-components-weblogfiles/00-00-00-08-94/Table.jpg</rdfs:seeAlso>
+    </owl:Axiom>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem">
+        <rdfs:comment>Electrical_Load</rdfs:comment>
+        <rdfs:comment>from composit complex system perspective (Q-Rock)</rdfs:comment>
+        <rdfs:comment>old:Robot_Subsystem_Component</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem_Mechanical_Interface -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem_Mechanical_Interface"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Robot_Tool -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Tool">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMeasuringRangeMeterMaximum"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_GPS -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_GPS">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_IMU -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_IMU">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_Interface -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Interface">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Subsystem_Mechanical_Interface"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_LIDAR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasMeasuringRangeMeterMaximum"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_Odometry -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Odometry">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_RADAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_RADAR">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Sensor_SONAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Sensor_SONAR">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Sensor"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Stereo_Camera -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Stereo_Camera">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#TOF_Camera -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#TOF_Camera">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Thermographic_Camera -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Thermographic_Camera">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Camera"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Tracked_Platform -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Tracked_Platform">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#hasNumberOfTrack"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:onDataRange>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+        <fundamentals:doi>https://doi.org/10.3390/machines10080648</fundamentals:doi>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Undefined -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Undefined">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Element"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Undefined_Joint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Undefined_Joint">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Joint"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Legged_Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Legged_Robot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Hybrid_Platform"/>
+        <rdfs:comment>the wheels of robot consist of legs similar structure e.g. Asguard</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Platfrom -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Platfrom">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasNumberOfWheel"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:onDataRange>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Robot_Platform"/>
+        <rdfs:comment>Wheeled mobile robot, eg agv</rdfs:comment>
+        <fundamentals:doi>DOI: 10.14313/JAMRIS/3-2019/21</fundamentals:doi>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Tracked_Robot -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Wheeled_Tracked_Robot">
+        <rdfs:comment>e.g. Helios VI, Galileo</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#2D_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#2D_LIDAR">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_LIDAR"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#3D_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/system_modelling#3D_LIDAR">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_LIDAR"/>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#interface_Arm_Base -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/system_modelling#interface_Arm_Base">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Base"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#interface_Arm_Tool -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/system_modelling#interface_Arm_Tool">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Arm_Tool"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/system_modelling#interface_Sensor_Interface -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/system_modelling#interface_Sensor_Interface">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/system_modelling#Sensor_Interface"/>
+    </owl:NamedIndividual>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/fundamentals#International_Protection_Marking">
+        <rdfs:comment>Ingress Protection Code</rdfs:comment>
+    </rdf:Description>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Continuous_Joint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Fixed_Joint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Floating_Joint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Planar_Joint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Prismatic_Joint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/system_modelling#Revolute_Joint"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

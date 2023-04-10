@@ -1,0 +1,1474 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/yxl/ontologies/reqirement_analysis#"
+     xml:base="https://w3id.org/yxl/ontologies/reqirement_analysis"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+     <owl:Ontology rdf:about="https://w3id.org/yxl/ontologies/requirement_analysis">
+      <dc:titel>Requirements Analsis, a sub ontology of Korcut</dc:titel>
+      <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehmed Yüksel</dc:creator>
+      <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-26T19:12:00+01:00</terms:created>
+      <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-10T12:15:00+01:00</terms:modified>
+      <rdfs:comment rdf:resource="https://github.com/bosforox/korcut_public#copyrights"/>
+      <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> This ontology contains concepts for inductive and conductive reasoning approaches to link the task to the component or the component to the task regarding requirements, capabilities, functions, and constraints </rdfs:comment>
+   </owl:Ontology>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/fundamentals#hasPropery -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPropery">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Property"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#architectureToTask -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#architectureToTask">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#taskToAchitecture"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#candidatePartFor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#candidatePartFor">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsRequirement"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsTask"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#candidatePartFor2 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#candidatePartFor2">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPropery"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRestriction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsTask"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capturedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capturedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#produces"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Feature"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Function"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#cost -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#cost"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costDepreciation -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costDepreciation">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#cost"/>
+        <rdfs:comment xml:lang="de">Afa Mittel</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costMaterial -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costMaterial">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#cost"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costOfElectricComponents -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costOfElectricComponents">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#costMaterial"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costOfMechanicalComponent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costOfMechanicalComponent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#costMaterial"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costOverhead -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costOverhead">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#cost"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#costStaff -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#costStaff">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#cost"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRequrement -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRequrement">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#needsFunction"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRestriction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRestriction">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesRestriction"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#hasCapability -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#hasCapability">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#isCapabilityOf"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#hasIP -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#hasIP">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#hasLiquid -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#hasLiquid">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasIP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Liquid"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#hasSolid -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#hasSolid">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasIP"/>
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Solid"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#hasStandard -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#hasStandard"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#inversTypeOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#inversTypeOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#isCapabilityOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#isCapabilityOf">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#isPartOf"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#matchingDevice -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#matchingDevice">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#neededRequirement2"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesRestriction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/fundamentals#hasPropery"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#neededRequirement -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#neededRequirement">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#suggestedDevice"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#neededRequirement2 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#neededRequirement2"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#needsFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsFunction">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Function"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Architecture"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#performsRequirement -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsRequirement">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#performsTask -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsTask">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#produces -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#produces"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#propertyToTask -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#propertyToTask">
+        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#taskToProperty"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requires -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requires">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Requested_Task"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Feature"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFunction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFunction">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requistedDeviceFor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requistedDeviceFor">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performsRequirement"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Constraint"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsProperty">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Constraint"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Property"/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#setsContraint -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#setsContraint">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsProperty"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFunction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture2 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture2">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesRestriction -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesRestriction">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsProperty"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#suggestedDevice -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#suggestedDevice">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#specifiesArchitecture"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#taskToAchitecture -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#taskToAchitecture">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFeature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#comprisesFunction"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#taskToProperty -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#taskToProperty">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsProperty"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice">
+        <rdfs:domain rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+        <rdfs:range rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Architecture"/>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Allocated_Requirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Allocated_Requirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        <rdfs:comment>Collection of multiple sub level requirements, like total  weight and sum of sub systems weight</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Cost -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Cost">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/korcut#Programmatic"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Derived_Requirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Derived_Requirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        <rdfs:comment>Repersentation of implied or transformed requreirement from higher-level requirement. A derived requirement is a requremt, which dependended to other requreinement. (E.g. Max speed or range and weight)</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Design_Requirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Design_Requirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Functional_Requirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Functional_Requirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        <rdfs:comment>The collection of necessary  task,action or activity</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Performance_Requirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Performance_Requirement">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/korcut#Functional_Requirement"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        <rdfs:comment>In generally measured in terms of quantity, quality, coverage,timeliness or readiness.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Programmatic -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Programmatic">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/korcut#Schedule -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/korcut#Schedule">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/korcut#Programmatic"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Alternative_Scanner -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Alternative_Scanner">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#produces"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#measurable_point_cloud"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Consider_Restrictions_For_Desired_Part -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Consider_Restrictions_For_Desired_Part">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#restrictsNonFunctional"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Requirements"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>A task considers a condition if the task requires a capability that constrains a condition</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Consider_Restrictions_For_Desired_Task -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Consider_Restrictions_For_Desired_Task">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPropery"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>A task considers a condition if the task requires a capability that constrains a condition</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part">
+        <rdfs:comment>Select here part</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Requirements -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Requirements">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#performsTask"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Current_System -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_System"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task">
+        <rdfs:comment>Select hier a task</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Parts_Consider_Restrictions -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Parts_Consider_Restrictions">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#propertyToTask"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#architectureToTask"/>
+                                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Parts_Ignore_Restrictions -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Parts_Ignore_Restrictions">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#architectureToTask"/>
+                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Task"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Tasks_Consider_Restrictions -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Tasks_Consider_Restrictions">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFunction"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+                                                <owl:someValuesFrom>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty>
+                                                            <rdf:Description>
+                                                                <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                                                            </rdf:Description>
+                                                        </owl:onProperty>
+                                                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part"/>
+                                                    </owl:Restriction>
+                                                </owl:someValuesFrom>
+                                            </owl:Restriction>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty>
+                                    <rdf:Description>
+                                        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#fulfillRestriction"/>
+                                    </rdf:Description>
+                                </owl:onProperty>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/fundamentals#hasPropery"/>
+                                        <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Tasks_Ignore_Restrictions -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Desired_Tasks_Ignore_Restrictions">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requires"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#needsCapability"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requiresFunction"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#performedByArchitecture"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Restriction>
+                                                <owl:onProperty>
+                                                    <rdf:Description>
+                                                        <owl:inverseOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                                                    </rdf:Description>
+                                                </owl:onProperty>
+                                                <owl:someValuesFrom rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Current_Part"/>
+                                            </owl:Restriction>
+                                        </owl:someValuesFrom>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment>A task considers a condition if the task requires a capability that constrains a condition</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#IPClasses -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#IPClasses"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Indoor_Water_Protected -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Indoor_Water_Protected">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasLiquid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX6"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasSolid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#property_indoor_water_proof"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protection"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Liquid -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Liquid">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#IPClasses"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Solid"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Measurable_Variable -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Measurable_Variable"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#No_Water_Protected -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#No_Water_Protected">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasLiquid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX5"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasSolid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#property_no_water_proof"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protection"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Requested_Task -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Requested_Task"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Explicit -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Explicit"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Implicit -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Implicit">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#isPartOf"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Sensor_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Sensor_LIDAR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#produces"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#measurable_point_cloud"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Solid -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Solid">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#IPClasses"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Architecture -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Architecture">
+        <rdfs:comment>System_Architecture accomplishes System_Function</rdfs:comment>
+        <rdfs:comment>System_Architecture realizes System_Capability</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Behaviour -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Behaviour"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability">
+        <rdfs:comment>Operational activitiy enables capability</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Constraint -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Constraint">
+        <rdfs:comment>waterproof 10m</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Feature -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Feature"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Function -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Function">
+        <rdfs:comment>System_Function supports Operational_Activitiy</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Property -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Property"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement">
+        <rdfs:comment>Design Requirements (Aircraft Design,  Sadraey, Book, Wiley)
+performance requirements;
+2. stability requirements;
+3. handling requirements;
+4. operational requirements;
+5. affordability requirements;
+6. reliability requirements;
+7. maintainability requirements;
+8. producibility requirements;
+9. evaluability requirements;
+10. usability requirements;
+11. safety (airworthiness for aircraft) requirements;
+12. crashworthiness requirements;
+13. supportability and serviceability requirements;
+14. sustainability requirements;
+15. disposability requirements;
+16. marketability requirements;
+17. environmental requirements;
+18. detectability requirements;
+19. standards requirements;
+20. legal requirements.</rdfs:comment>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#System_Verification -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Verification"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protected -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protected">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasLiquid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX7"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#hasSolid"/>
+                        <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP6X"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#inversHasProperty"/>
+                <owl:hasValue rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#property_water_proof"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protection"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protection -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protection"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#2D_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#2D_LIDAR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_2D"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Sensor_LIDAR"/>
+    </owl:Class>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#3D_LIDAR -->
+
+    <owl:Class rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#3D_LIDAR">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#typeOfDevice"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:oneOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_3D"/>
+                        </owl:oneOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Sensor_LIDAR"/>
+    </owl:Class>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capability_locomotion -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_locomotion">
+        <requiresFeature rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#feature_leg"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capability_manipulation -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_manipulation"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capability_mapping -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_mapping">
+        <requiresFeature rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#feature_scanner"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_indoor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_indoor">
+        <restrictsNonFunctional rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_indoor"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_outdoor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_outdoor">
+        <restrictsNonFunctional rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_outdoor"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_indoor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_indoor">
+        <restrictsProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#property_no_water_proof"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_outdoor -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#constraint_water_protection_outdoor">
+        <restrictsProperty rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#property_water_proof"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#feature_leg -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#feature_leg">
+        <comprisesFunction rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#function_walking"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#feature_scanner -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#feature_scanner">
+        <comprisesFunction rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#function_environmental_scanning"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#function_enfironmental_scanning_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#function_enfironmental_scanning_2"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#function_environmental_scanning -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#function_environmental_scanning">
+        <performedByArchitecture rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_2D"/>
+        <performedByArchitecture rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_3D"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#function_manipulation_fast -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#function_manipulation_fast">
+        <performedByArchitecture rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#manipulation_organ_arm"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#function_manipulation_slow -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#function_manipulation_slow">
+        <performedByArchitecture rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#manipulation_organ_arm"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#function_walking -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#function_walking">
+        <performedByArchitecture rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#locomotion_organ_leg"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#locomotion_organ_leg -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#locomotion_organ_leg"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#manipulation_organ_arm -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#manipulation_organ_arm"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#measurable_point_cloud -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#measurable_point_cloud"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_1">
+        <owl:sameAs rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Velodyne_HDL32"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_2">
+        <owl:sameAs rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Hokuyu_2D"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_3">
+        <owl:sameAs rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_recupera"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_4 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_4">
+        <owl:sameAs rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_sherpa"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_Asguard_Battery_Pack -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Asguard_Battery_Pack">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Explicit"/>
+        <isPartOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_Asguard_Wheel -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Asguard_Wheel">
+        <rdf:type rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#Robot_Asguard_Explicit"/>
+        <isPartOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_Hokuyu_2D -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Hokuyu_2D">
+        <hasLiquid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX5"/>
+        <hasSolid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+        <typeOfDevice rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_2D"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_Ibeo_Scala -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Ibeo_Scala">
+        <produces rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#measurable_point_cloud"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_Velodyne_HDL32 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_Velodyne_HDL32">
+        <hasLiquid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX7"/>
+        <hasSolid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP6X"/>
+        <isPartOf rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard"/>
+        <typeOfDevice rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_3D"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_recupera -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_recupera">
+        <hasLiquid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX5"/>
+        <hasSolid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+        <typeOfDevice rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#locomotion_organ_leg"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_sherpa -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#part_leg_sherpa">
+        <hasLiquid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX6"/>
+        <hasSolid rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+        <typeOfDevice rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#locomotion_organ_leg"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#property_indoor_water_proof -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#property_indoor_water_proof"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#property_no_water_proof -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#property_no_water_proof"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#property_water_proof -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#property_water_proof"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#reqirement_locomotion_on_terrain -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#reqirement_locomotion_on_terrain">
+        <needsCapability rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_locomotion"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_indoor_task -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_indoor_task">
+        <needsCapability rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_indoor"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_mapping_environmental -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_mapping_environmental">
+        <needsCapability rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_mapping"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_outdoor_task -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_outdoor_task">
+        <needsCapability rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#capability_water_protection_outdoor"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#robot_Asguard"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_2D -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_2D"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_3D -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#sensor_laserscanner_3D"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP5X"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP6X -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IP6X"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX5 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX5"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX6 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX6"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX7 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#standard_IPX7"/>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#task_1 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#task_1">
+        <requires rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_mapping_environmental"/>
+        <requires rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_outdoor_task"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#task_2 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#task_2">
+        <requires rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#reqirement_locomotion_on_terrain"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- https://w3id.org/yxl/ontologies/reqirement_analysis#task_3 -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#task_3">
+        <requires rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#reqirement_locomotion_on_terrain"/>
+        <requires rdf:resource="https://w3id.org/yxl/ontologies/reqirement_analysis#requirement_indoor_task"/>
+    </owl:NamedIndividual>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Indoor_Water_Protected"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#No_Water_Protected"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#Water_Protected"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Architecture"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Capability"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Component"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Constraint"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Feature"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Function"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Property"/>
+            <rdf:Description rdf:about="https://w3id.org/yxl/ontologies/reqirement_analysis#System_Reqirement"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
