@@ -1,9 +1,9 @@
-<img src="https://github.com/bosforox/korcut/blob/master/documentation/figures/korcut_logo_text_90.png" width="90">
+<img src="../../documentation/figures/korcut_logo_text_90.png" width="90">
 
 # Grasping ontology
 
 The grasping ontology and class hierarchy are referring to the human hand grasping anaysis work of Thomas Feix et al.
-To find more information see also the paper The GRASP Taxonomy of Human Grasp Types and the dissertation of Thomas Feix  Anthropomorphic Hand Optimization based on a Latent Space Analysis
+To find more information see also the paper The GRASP Taxonomy of Human Grasp Types and the dissertation of Thomas Feix [Anthropomorphic Hand Optimization based on a Latent Space Analysis](http://me.xief.net/publications/thesis.pdf).
 This is a sub-ontology of the korcut ontology family, which represents grasping domain related knowledge
 
 # korcut
