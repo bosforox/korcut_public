@@ -8,7 +8,7 @@ This is a sub-ontology of the korcut ontology family, which represents system mo
 # korcut
 
 The korcut (Knowledge-based Open Robot voCabulary as Utility Toolkit) provides support for system developers in the field of robotics to cover the knowledge gaps in the interdisciplinary work of electrical, mechanical and software system developers as well other fields and also user for the hardware-related areas.
-This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany.
+This work was performed as a dissertation within the frame of the projects [Recupare-Reha](https://robotik.dfki-bremen.de/en/research/projects/recupera-reha.html), [D-Rock](https://robotik.dfki-bremen.de/en/research/projects/d-rock.html), [Q-Rock](https://robotik.dfki-bremen.de/en/research/projects/q-rock.html), [PERIOD](https://robotik.dfki-bremen.de/en/research/projects/period-og12.html) and [KiMMI-SF](https://robotik.dfki-bremen.de/en/research/projects/kimmi-sf/) at [Robotics Innovation Center](https://robotik.dfki-bremen.de/en/startpage.html) of [the German Research Center for Artificial Intelligence (DFKI)](/www.dfki.de) in Bremen, Germany.
 
 The related publication and also the other publications from my work can be found under my publication list on <a href="https://www.dfki.de/web/ueber-uns/mitarbeiter/person/meyu01/"> DFKI Webpage </a>
 
@@ -91,9 +91,8 @@ which help the user to understand the changes performed.
 ## Maintainer / Authors / Contributers
 
 * [Mehmed Yüksel](https://orcid.org/0000-0001-8422-5773)
-* [Thomas Röhr](thomas.roehr@dfki.de)
-* [Marko Jankovic](https://orcid.org/0000-0002-9904-7241)
-* [Mohammad Mohammadzadeh Babr]()
+* [Thomas Röhr]()
+
 
 ## Copyrights
 [//]:  <> ( <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work -excluding the figures- is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>. All figures are copyrighted.)
